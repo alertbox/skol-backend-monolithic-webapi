@@ -1,20 +1,22 @@
-# Try out the minimal API with .NET 6.0 (preview)
+# Skol Monolithic Web API (Backend)
 
-This [Cocktails][cocktails-list] :cocktail: ordering backend API code demonstrates developing a minimal API with CQRS pattern for ASP.NET Web API on .NET 6.0 preview using VS Code and Development Containers.
+This [Cocktails][cocktails-list] :cocktail: ordering backend API code demonstrates developing a minimal API with CQRS pattern for ASP.NET Web API.
 
 > Originally, **Skol** is the Swedish way of saying :beers: Cheers! 
 
 ### What's included:
-- Uses .NET 6.0 development container found in @kosalanuwan/devcontainers
+- Uses .NET 5.0 as target framework
 - Uses Top-level Class, Minimal Hosting, Record types, et al.
 - Uses ASP.NET Core for the RESTful Web API
 - Uses API Versioning, REST Convensions, et al.
 - Uses Seed Data for EF Core InMemory database
 - Uses DbContext for the Unit of Work and repository pattern
-- Uses Mediatr package for Publisher/Subscriber pattern
+- Uses Mediatr for Publisher/Subscriber pattern
 - Uses Onion Architecture for solution structure and layers
-- Uses REST Client extension for trying out the rest-endpoints from VS Code
+- Uses REST Client extension for trying out the api endpoints from VS Code
+- Built with Visual Studio 2019 for Mac
 - Configured to build and run from the VS Code tasks
+- Configured to build and run from Remote - Container found in @kosalanuwan/devcontainers
 
 ## Todo
 
