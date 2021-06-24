@@ -1,10 +1,10 @@
-using MediatR;
-using MediatR.Pipeline;
-using Skol.Domain.Models;
-using Skol.Application.Cocktails.Commands;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
+using MediatR;
+using MediatR.Pipeline;
+using Skol.Application.Cocktails.Commands;
+using Skol.Domain.Models;
 
 namespace Skol.Application.Cocktails.Triggers
 {

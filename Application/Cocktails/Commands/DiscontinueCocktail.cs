@@ -1,6 +1,5 @@
-using System.Collections.Generic;
-using Skol.Domain.Models;
 using MediatR;
+using Skol.Domain.Models;
 
 namespace Skol.Application.Cocktails.Commands
 {

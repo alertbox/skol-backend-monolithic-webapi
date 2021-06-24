@@ -9,7 +9,7 @@ namespace Skol.Domain.Models
     {
         [property: JsonIgnore]
         public int Id { get; init; }
-        
+
         public bool ContainsAlcohol => Items.Any(i => i.ContainsAlcohol);
         public int Quantity => Items.Sum(i => i.Quantity);
         public decimal Discount { get; init; } = 0;
@@ -17,7 +17,7 @@ namespace Skol.Domain.Models
         public DateTime PlacedAsOf => DateTime.UtcNow;
         public List<OrderItem> Items { get; init; } = new List<OrderItem>();
 
-        [JsonIgnore]
+        [property: JsonIgnore]
         public List<StateChangeEntry> StateChanges { get; init; } = new List<StateChangeEntry>();
     }
 }

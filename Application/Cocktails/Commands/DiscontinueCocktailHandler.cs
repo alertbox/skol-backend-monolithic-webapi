@@ -1,10 +1,9 @@
-using System.Collections.Generic;
+using System;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Skol.Domain.Models;
 using MediatR;
-using System;
+using Skol.Domain.Models;
 
 namespace Skol.Application.Cocktails.Commands
 {
@@ -19,7 +18,7 @@ namespace Skol.Application.Cocktails.Commands
             Cocktail cocktail = db.Cocktails.Single(c => c.Code.Equals(request.Code));
             cocktail.Discontinued = true;
             cocktail.DiscontinuedDate = DateTime.UtcNow;
-            cocktail.StateChanges.Add(new CocktailDiscontinued{ Entity = cocktail });
+            cocktail.StateChanges.Add(new CocktailDiscontinued { Entity = cocktail });
 
             await db.SaveChangesAsync(cancellationToken);
 
