@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project>
+	<PropertyGroup Label="Sdk">
+		<DefaultNetCoreTargetFramework>net5.0</DefaultNetCoreTargetFramework>
+		<IsPackable>false</IsPackable>
+		<IsTestProject>$(MSBuildProjectName.Contains('.Tests'))</IsTestProject>
+	</PropertyGroup>
+	<ItemGroup Label="Enable Internals" Condition="'$(IsTestProject)' != 'true'">
+		<AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+			<!-- We use the value of AssemblyName to declare the value of the attribute -->
+			<_Parameter1>$(AssemblyName).Tests</_Parameter1>
+		</AssemblyAttribute>
+		<AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+			<!-- We use the value of AssemblyName to declare the value of the attribute -->
+			<_Parameter1>DynamicProxyGenAssembly2</_Parameter1>
+		</AssemblyAttribute>
+	</ItemGroup>
+	<PropertyGroup Label="General Info">
+		<Authors>Kosala Nuwan Perera</Authors>
+		<Company>Alertbox Inc.</Company>
+		<Copyright>Copyright (c) $([System.DateTime]::Now.ToString('yyyy')) $(Company)</Copyright>
+		<RepositoryUrl>https://github.com/alertbox/skol-backend-monolithic-webapi</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+	</PropertyGroup>
+</Project>
