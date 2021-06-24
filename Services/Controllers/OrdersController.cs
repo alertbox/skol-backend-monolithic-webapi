@@ -1,12 +1,12 @@
 using System.Collections.Generic;
+using System.Net;
 using System.Net.Mime;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Skol.Domain.Models;
-using Skol.Application.Orders.Queries;
 using Skol.Application.Orders.Commands;
-using System.Net;
+using Skol.Application.Orders.Queries;
+using Skol.Domain.Models;
 
 namespace Skol.Services.Controllers
 {
@@ -28,7 +28,7 @@ namespace Skol.Services.Controllers
 
         [HttpPost("")]
         [ProducesResponseType((int)HttpStatusCode.Created)]
-        public async Task<IActionResult> CreateAsync([FromBody]CreateOrder request)
+        public async Task<IActionResult> CreateAsync([FromBody] CreateOrder request)
         {
             Order order = await mediator.Send(request);
 

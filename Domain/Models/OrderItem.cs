@@ -6,7 +6,7 @@ namespace Skol.Domain.Models
     {
         [property: JsonIgnore]
         public int Id { get; init; }
-        
+
         public string Code { get; init; }
         public string DisplayName { get; init; }
         public bool ContainsAlcohol { get; init; } = true;
@@ -19,10 +19,10 @@ namespace Skol.Domain.Models
         [property: JsonIgnore]
         public Cocktail Cocktail { get; init; }
 
-        [JsonIgnore]
+        [property: JsonIgnore]
         public int OrderId { get; init; }
 
-        [JsonIgnore]
+        [property: JsonIgnore]
         public Order Order { get; init; }
     }
 }

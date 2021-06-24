@@ -1,6 +1,5 @@
 using System;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection.Extensions;
 using Skol.Application;
 using Skol.Infrastructure;
 
@@ -16,12 +15,11 @@ namespace Microsoft.Extensions.DependencyInjection
                        // .UseSqlServer(configuration.GetConnectionString("DefaultConnection"))
                        .EnableDetailedErrors()
                        .EnableSensitiveDataLogging()
-                       .LogTo(Console.WriteLine), 
+                       .LogTo(Console.WriteLine),
                        contextLifetime: ServiceLifetime.Singleton
                 )
                 .AddSingleton<ISkolContext, SkolContext>()
                 .AddSingleton<IStateChangeHandler, StateChangeHandler>();
-
         }
     }
 }

@@ -1,10 +1,9 @@
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Skol.Domain.Models;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using Skol.Domain.Models;
 
 namespace Skol.Application.Orders.Commands
 {

@@ -1,11 +1,9 @@
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Skol.Domain.Models;
 using MediatR;
-using System;
 using Microsoft.EntityFrameworkCore;
+using Skol.Domain.Models;
 
 namespace Skol.Application.Cocktails.Commands
 {
@@ -31,7 +29,7 @@ namespace Skol.Application.Cocktails.Commands
                 OriginCode = origin.Code,
                 OriginDisplayName = origin.DisplayName,
             };
-            cocktail.StateChanges.Add(new CocktailRebranded{ Entity = cocktail, Origin = origin, OriginDiscontinued = request.DiscontinueOrigin });
+            cocktail.StateChanges.Add(new CocktailRebranded { Entity = cocktail, Origin = origin, OriginDiscontinued = request.DiscontinueOrigin });
             db.Cocktails.Add(cocktail);
 
             await db.SaveChangesAsync(cancellationToken);
